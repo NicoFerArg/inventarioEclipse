@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+    <property name="hibernate.connection.username">inventario</property>
+    <property name="hibernate.connection.password">password</property>
+    <mapping resource="com/inventario/entities/Autos.hbm.xml"/>
+    <mapping resource="com/inventario/entities/Cliente.hbm.xml"/>
+    <mapping resource="com/inventario/entities/TipoMovimientos.hbm.xml"/>
+    <mapping resource="com/inventario/entities/Marca.hbm.xml"/>
+    <mapping resource="com/inventario/entities/Repuesto.hbm.xml"/>
+    <mapping resource="com/inventario/entities/Movimientos.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-12-2018 07:28:41 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.inventario.entities.Repuesto" table="repuesto" catalog="inventario" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="marca" class="com.inventario.entities.Marca" fetch="select" lazy="false">
+            <column name="idMarca" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" not-null="true" />
+        </property>
+        <property name="stock" type="int">
+            <column name="stock" not-null="true" />
+        </property>
+        <property name="stockMin" type="int">
+            <column name="stockMin" not-null="true" />
+        </property>
+        <property name="stockMax" type="int">
+            <column name="stockMax" not-null="true" />
+        </property>
+        <property name="fecha" type="timestamp">
+            <column name="fecha" length="19" not-null="true" />
+        </property>
+        <set name="moveses" table="movimientos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idRepuesto" not-null="true" />
+            </key>
+            <one-to-many class="com.inventario.entities.Moves" />
+        </set>
+    </class>
+</hibernate-mapping>
