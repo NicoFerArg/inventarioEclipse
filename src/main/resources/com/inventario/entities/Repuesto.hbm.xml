@@ -30,7 +30,7 @@
             <key>
                 <column name="idRepuesto" not-null="true" />
             </key>
-            <one-to-many class="com.inventario.entities.Moves" />
+            <one-to-many class="com.inventario.entities.Movimientos" />
         </set>
     </class>
 </hibernate-mapping>
