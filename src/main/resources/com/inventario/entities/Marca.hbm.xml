@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 30-12-2018 07:28:41 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.inventario.entities.Marca" table="marca" catalog="inventario" optimistic-lock="version">
@@ -18,13 +18,13 @@
             <key>
                 <column name="idMarca" />
             </key>
-            <one-to-many class="com.inventario.entities.Parts" />
+            <one-to-many class="com.inventario.entities.Repuesto" />
         </set>
         <set name="carses" table="autos" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="idMarca" not-null="true" />
             </key>
-            <one-to-many class="com.inventario.entities.Cars" />
+            <one-to-many class="com.inventario.entities.Autos" />
         </set>
     </class>
 </hibernate-mapping>

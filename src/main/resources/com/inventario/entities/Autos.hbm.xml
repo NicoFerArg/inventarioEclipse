@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 30-12-2018 07:28:41 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.inventario.entities.Autos" table="autos" catalog="inventario" optimistic-lock="version">
@@ -8,7 +8,7 @@
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="marcas" class="com.inventario.entities.Marcas" fetch="select">
+        <many-to-one name="marcas" class="com.inventario.entities.Marca" fetch="select">
             <column name="idMarca" not-null="true" />
         </many-to-one>
         <property name="modelo" type="string">
