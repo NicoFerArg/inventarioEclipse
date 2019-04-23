@@ -48,11 +48,11 @@ public class Autos implements java.io.Serializable{
 	
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="idMarca", nullable=false)
-    public Marca getMarca() {
+    public Marca getMarcas() {
         return this.marcas;
     }
     
-    public void setMarca(Marca marcas) {
+    public void setMarcas(Marca marcas) {
         this.marcas = marcas;
     }
 

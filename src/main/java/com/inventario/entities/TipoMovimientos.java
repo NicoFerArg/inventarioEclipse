@@ -65,7 +65,7 @@ public class TipoMovimientos  implements java.io.Serializable {
 
     
     @Column(name="nombre", unique=true, nullable=false, length=100)
-    public String getNombree() {
+    public String getNombre() {
         return this.nombre;
     }
     
